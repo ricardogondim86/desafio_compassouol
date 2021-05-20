@@ -40,13 +40,14 @@ public class ProductController {
 	}
 	
 	@PutMapping(value = "{id}")
-	public ResponseEntity<Product> changeProduct(@RequestBody Product product, @PathVariable("id") Integer id) {
+	public ResponseEntity<Product> changeProduct(@RequestBody @Validated ProductDTO productDto, @PathVariable("id") Integer id) {
 		
 		Optional<Product> productDb = productService.findById(id);
 		
-		if (productDb==null) {
+		if (!productDb.isPresent()) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
+		Product product = productDto.dtoToProduct();
 		product.setId(id);
 		
 		productService.save(product);
@@ -87,7 +88,7 @@ public class ProductController {
 		
 		Optional<Product> productDb = productService.findById(id);
 		
-		if (productDb==null) {
+		if (!productDb.isPresent()) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 		
