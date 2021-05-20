@@ -3,6 +3,8 @@ package com.compassouol.ws.dto;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Positive;
 
+import com.compassouol.ws.model.Product;
+
 import lombok.Getter;
 
 @Getter
@@ -39,6 +41,14 @@ public class ProductDTO {
 
 	public void setPrice(Double price) {
 		this.price = price;
-	}	
+	}
+	
+	public Product dtoToProduct() {
+		Product product = new Product();
+		product.setName(name);
+		product.setDescription(description);
+		product.setPrice(price);
+		return product;
+	}
 
 }

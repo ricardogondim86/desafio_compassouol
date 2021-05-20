@@ -32,10 +32,7 @@ public class ProductController {
 	@PostMapping
 	public ResponseEntity<Product> registerProduct(@RequestBody @Validated ProductDTO productDto) {
 		
-		Product product = new Product();
-		product.setName(productDto.getName());
-		product.setDescription(productDto.getDescription());
-		product.setPrice(productDto.getPrice());
+		Product product = productDto.dtoToProduct();
 		
 		Product registeredProduct = productService.save(product);
 		
