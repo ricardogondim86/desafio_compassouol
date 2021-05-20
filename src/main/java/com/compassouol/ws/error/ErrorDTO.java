@@ -1,4 +1,4 @@
-package com.compassouol.error;
+package com.compassouol.ws.error;
 
 public class ErrorDTO {
     private String key;

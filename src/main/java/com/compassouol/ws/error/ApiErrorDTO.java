@@ -1,4 +1,4 @@
-package com.compassouol.error;
+package com.compassouol.ws.error;
 
 import java.util.Date;
 import java.util.Set;

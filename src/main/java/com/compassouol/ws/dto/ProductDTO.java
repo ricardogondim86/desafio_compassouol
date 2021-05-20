@@ -1,4 +1,4 @@
-package com.compassouol.dto;
+package com.compassouol.ws.dto;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Positive;

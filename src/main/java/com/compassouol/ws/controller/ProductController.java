@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.compassouol.dto.ProductDTO;
+import com.compassouol.ws.dto.ProductDTO;
 import com.compassouol.ws.model.Product;
 import com.compassouol.ws.service.ProductService;
 
